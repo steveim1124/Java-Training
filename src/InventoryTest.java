@@ -15,7 +15,7 @@ public class InventoryTest {
 	public void shouldAddQtyToProductStockQty() {
 		record.processTransaction("AB1234", "add",5);
 		record.processTransaction("AB1234", "add",15);
-		assertEquals(20, record.productTotal("AB1234"));
+		assertEquals(20, record.getProductTotal("AB1234"));
 	}
 
 	

@@ -6,7 +6,7 @@ public class Product {
 	private List<Product> productList = new ArrayList<>();
 	private String productCode;
 	private String description;
-	private int stockQty;
+	private Inventory inventory = new Inventory();
 
 	public Product() {
 
@@ -31,7 +31,7 @@ public class Product {
 					productList.add(new Product(productCode, description));
 					added = true;
 				} else
-					System.out.println("not added");
+					System.out.println("not added - duplicate");
 			}
 		}
 		return added;
@@ -53,13 +53,12 @@ public class Product {
 		this.description = description;
 	}
 
-	public int getStockQty() {
-		return stockQty;
+	public int getStockQty(String productCode) {
+		return inventory.getProductTotal(productCode);
 	}
 
-	public boolean addStock(String productCode, int qty) {
-		// TODO Auto-generated method stub
-		return false;
+	public String addStock(String productCode, int qty) {
+		return inventory.processTransaction(productCode, "add", qty);
 	}
 	
 	

@@ -4,18 +4,14 @@ import java.util.List;
 public class Inventory {
 
 	private String productCode;
-	private String mode;
-	private int qty;
 	private int stockQty; 
 	private List<Inventory> record = new ArrayList<>();
 
 	public Inventory() {
 	}
 
-	public Inventory(String productCode, String mode, int qty) {
+	public Inventory(String productCode) {
 		this.productCode = productCode;
-		this.mode = mode;
-		this.qty = qty;
 	}
 
 	public String processTransaction(String productCode, String mode, int qty) {
@@ -24,20 +20,23 @@ public class Inventory {
 		if (mode == "add") {				
 			if (productLocation >= 0) {
 				record.get(productLocation).setStockQty(getStockQty() + qty)  ;
-				System.out.println("product " + record.get(productLocation).getProductCode()
-						+ "qty " + record.get(productLocation).getStockQty());
+				System.out.println("product updated " + record.get(productLocation).getProductCode()
+						+ " qty " + record.get(productLocation).getStockQty()+ "   ");
 
 			} else {
-				record.add(new Inventory(productCode, mode, qty));
-				stockQty += qty;
+				record.add(new Inventory(productCode));
+				record.get(0).setStockQty(getStockQty() + qty);
+				System.out.println("product added " + record.get(0).getProductCode()
+						+ " qty " + record.get(0).getStockQty() + "   ");
 			}
+			System.out.println("   ");
 			result = "added";
 		} else if (mode == "deduct") {
 			result = "product code not found";
 			if (productLocation >= 0) {
 				if (record.get(productLocation).getStockQty() >= qty) {
 					record.get(productLocation).setStockQty(getStockQty() - qty);
-					record.add(new Inventory(productCode, mode, qty));
+					record.add(new Inventory(productCode));
 					result = "deducted";
 				} else
 					return "insufficient stock";
@@ -80,17 +79,9 @@ public class Inventory {
 		this.stockQty = qty;
 	}
 
-	public int productTotal(String productCode) {
+	public int getProductTotal(String productCode) {
 		int stkQty = record.get(getProductLocation(productCode)).getStockQty();
 		return stkQty;
-	}
-
-	public boolean addStock(String productCode, int inQty) {
-		int location = getProductLocation(productCode);
-		if (location < 0){
-			
-		}
-		return false;
 	}
 
 }
