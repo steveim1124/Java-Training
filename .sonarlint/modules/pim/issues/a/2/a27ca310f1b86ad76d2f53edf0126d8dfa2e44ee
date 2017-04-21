@@ -1,0 +1,10 @@
+
+Q
+squid:S106";Replace this usage of System.out or System.err by a logger.(â‚ìì
+gsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(ë‰éùÿÿÿÿ
+1squid:S1220""Move this file to a named package.
+Csquid:S1068"'Remove this unused "qty" private field.(’ ²þÿÿÿÿ
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(éšµ®ÿÿÿÿÿ
+?squid:S1068"(Remove this unused "mode" private field.(ÍýÇÍ
+nsquid:CommentedOutCodeLineW"<This block of commented-out lines of code should be removed.(é×±øÿÿÿÿ8Ž›ãè³+
+nsquid:CommentedOutCodeLine["<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8Ž›ãè³+

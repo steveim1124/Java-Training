@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 2 elements to &apos;pim/test&apos;&#x0D;&#x0A;- Original project: &apos;pim&apos;&#x0D;&#x0A;- Destination element: &apos;pim/test&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     InventoryTest.java&#x0D;&#x0A;     ProductTest.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="/test" element1="/src&lt;{InventoryTest.java" element2="/src&lt;{ProductTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1491378249660" units="2" version="1.0"/>
+</session>

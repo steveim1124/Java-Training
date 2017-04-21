@@ -1,0 +1,8 @@
+
+Q
+squid:S106"";Replace this usage of System.out or System.err by a logger.(„ã«ã
+Nsquid:S1135="2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+1squid:S1220""Move this file to a named package.
+Nsquid:S1172<"2Remove this unused method parameter "productCode".(šÄµ›ÿÿÿÿÿ
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íž³‚üÿÿÿÿ
+Usquid:S1155">Use isEmpty() to check whether the collection is empty or not.(˜“ü˜
