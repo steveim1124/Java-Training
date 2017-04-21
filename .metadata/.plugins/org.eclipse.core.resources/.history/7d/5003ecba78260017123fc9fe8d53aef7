@@ -4,11 +4,9 @@ public class Product {
 	String code;
 	String description;
 	
-	public Product(String productCode, String productDescription){
-		this.code = productCode;
-		this.description = productDescription;
-		Inventory inventory = new Inventory(productCode);
-		System.out.println("Product '" + code + "' of description '" + description + "' has been added." );
+	public Product(String code, String description){
+		this.code = code;
+		this.description = description;
 	}
 
 	public String getCode() {

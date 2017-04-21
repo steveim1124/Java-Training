@@ -8,11 +8,6 @@ public class Inventory {
 		this.stockQty = qty;
 	}
 
-	public Inventory(String productCode) {
-		this.productCode = productCode;
-		this.stockQty = 0;
-	}
-
 	public String getProductCode() {
 		return productCode;
 	}
