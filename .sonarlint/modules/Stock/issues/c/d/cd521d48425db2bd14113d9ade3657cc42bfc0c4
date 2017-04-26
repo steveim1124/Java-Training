@@ -1,0 +1,6 @@
+
+]
+squid:S106";Replace this usage of System.out or System.err by a logger.(È‹¨©ÿÿÿÿÿ8ãÀÂÿ¸+
+1squid:S1220""Move this file to a named package.
+Lsquid:S1481
+".Remove this unused "inventory" local variable.(´Ê–Ú8”‰äÿ¸+

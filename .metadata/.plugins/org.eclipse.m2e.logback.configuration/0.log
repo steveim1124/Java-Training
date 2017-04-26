@@ -236,3 +236,10 @@ Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Failure to tra
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:503) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:421) ~[na:na]
 	... 8 common frames omitted
+2017-04-21 11:15:53,613 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@64caf8f{HTTP/1.1,[http/1.1]}{127.0.0.1:0}
+2017-04-21 11:15:53,645 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@13e66a2d{/help,null,UNAVAILABLE}
+2017-04-26 08:43:07,976 [Start Help Server] INFO  org.eclipse.jetty.util.log - Logging initialized @79854ms
+2017-04-26 08:43:08,122 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-9.3.9.v20160517
+2017-04-26 08:43:08,165 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@19fe9820{/help,null,AVAILABLE}
+2017-04-26 08:43:08,191 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@356a175a{HTTP/1.1,[http/1.1]}{127.0.0.1:58898}
+2017-04-26 08:43:08,191 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started @80072ms
