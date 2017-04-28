@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;productCode&apos; in &apos;InventoryController.addProduct(...)&apos; to &apos;product&apos;&#x0D;&#x0A;- Original project: &apos;Stock&apos;&#x0D;&#x0A;- Original element: &apos;InventoryController.addProduct(Product).productCode&apos;&#x0D;&#x0A;- Renamed element: &apos;productCode&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;productCode&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{InventoryController.java[InventoryController~addProduct~QProduct;@productCode!178!196!186!196!QProduct;!0!true" name="product" references="true" stamp="1493365117188" version="1.0"/>
+</session>

@@ -1,0 +1,30 @@
+
+public class Product {
+	
+	String code;
+	String description;
+	
+	public Product(String productCode, String productDescription){
+		this.code = productCode;
+		this.description = productDescription;
+		Inventory inventory = new Inventory(productCode);
+		System.out.println("Product '" + code + "' of description '" + description + "' has been added." );
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+}

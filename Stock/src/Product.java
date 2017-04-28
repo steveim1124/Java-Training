@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Product {
 	
@@ -7,8 +9,6 @@ public class Product {
 	public Product(String productCode, String productDescription){
 		this.code = productCode;
 		this.description = productDescription;
-		Inventory inventory = new Inventory(productCode);
-		System.out.println("Product '" + code + "' of description '" + description + "' has been added." );
 	}
 
 	public String getCode() {

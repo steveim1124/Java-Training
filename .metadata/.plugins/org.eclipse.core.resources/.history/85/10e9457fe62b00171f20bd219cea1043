@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class InventoryController {
+	
+	private List<String> productList = new ArrayList<>();
+	
+	private void addProduct(String productCode, String description){
+		if (checkIfProductExists(productCode)){
+			productList.add(productCode);
+			// do adding product with inventory controller functionality
+			Product addProductCode = new Product(productCode, description);
+			Inventory inventory = new Inventory(productCode);
+			System.out.println("Product '" + productCode + "' of description '" + description + "' has been added." );
+
+		} else
+			System.out.println("Cannot add product code " + productCode + " as it already exists");
+		
+	}
+	
+	private boolean checkIfProductExists(String code){
+		boolean productExists = false;
+		if (productList.indexOf(code) >=0)
+			productExists = true;
+		return productExists;
+	}
+
+}
