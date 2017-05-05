@@ -1,0 +1,49 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class InventoryController {
+	
+	public List<Product> productList  = new ArrayList<>();
+	public Inventory inventory = new Inventory(product.getCode());
+
+	public void addProduct(Product product) {
+		if (!checkIfProductExists(product.getCode(), product.getDescription())) {
+
+			// do adding product with inventory controller functionality
+//			Inventory inventory = new Inventory(product.getCode());
+			
+			System.out.println("Product '" + product.getCode() + "' of description '" + product.getDescription()
+					+ "' has been added.");
+
+		} else
+			System.out.println("Cannot add product code " + product.getCode() + " as it already exists");
+
+	}
+	
+	public void addstock(Product product, Integer qtyIn){
+		if (checkIfProductExists(product.getCode(), product.getDescription())) {
+			inventory.addStock(product.getCode(), qtyIn);
+		} else System.out.println("Product " + product.getCode() + " does not exist");
+	}
+
+	private boolean checkIfProductExists(String code, String description) {
+		boolean productExists = false;
+		// System.out.println("product list = " +
+		// productList.get(0).toString());
+		// if (productList.indexOf(code) != -1){
+		// if (productList.contains(code)){
+		if (productList.size() == 0) {
+			productList.add(new Product(code, description));
+		} else {
+			int productCount = productList.size();
+			for (int i = 0; i < productCount; i++) {
+				if (productList.get(i).getCode().toString().equals(code)) {
+					productExists = true;
+				} else
+					productList.add(new Product(code, description));
+			}
+		}
+		return productExists;
+	}
+
+}

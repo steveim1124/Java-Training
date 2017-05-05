@@ -1,0 +1,46 @@
+import java.util.HashMap;
+
+public class Inventory {
+	String productCode;
+	Integer stockQty;
+	HashMap<String, Integer> productStock = new HashMap<String, Integer>();
+	
+	public Inventory(String prodctCode, Integer qty){
+		this.productCode = prodctCode;
+		this.stockQty = qty;
+	}
+
+	public Inventory(String productCode) {
+		this.productCode = productCode;
+		this.stockQty = 0;
+	}
+
+	public Inventory() {
+	}
+
+	public String getProductCode() {
+		return productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	public Integer getStockQty() {
+		return stockQty;
+	}
+
+	public void setStockQty(Integer stockQty) {
+		this.stockQty = stockQty;
+	}
+
+	public void addStock(String productCode, Integer qtyIn) {
+		System.out.println("all before = " + productStock.getOrDefault(productCode, getStockQty()));
+		productStock.put(productCode, productStock.getOrDefault(productCode, getStockQty()) + qtyIn);
+		System.out.println("Stock of qty " + qtyIn + " has been added to product " + productCode + " Stock total is now "
+		+ productStock.get(productCode));
+		System.out.println("all = " + productStock.getOrDefault(productCode, getStockQty()));
+		
+	}
+	
+}

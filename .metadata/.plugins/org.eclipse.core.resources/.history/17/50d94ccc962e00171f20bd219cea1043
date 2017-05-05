@@ -1,0 +1,27 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Product product = new Product("AB1234", "First Product");
+		InventoryController inventory = new InventoryController();
+
+		addNewProduct(product, inventory);
+		addNewProduct(product, inventory);
+		
+		addStock(product, inventory, 10);
+
+	}
+
+	private static void addStock(Product product, InventoryController inventory, Integer qtyIn) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void addNewProduct(Product product, InventoryController inventory) {
+		inventory.addProduct(product);
+	//	System.out.println("Added product " + product.getCode() + " - " + product.getDescription());
+
+	}
+
+}

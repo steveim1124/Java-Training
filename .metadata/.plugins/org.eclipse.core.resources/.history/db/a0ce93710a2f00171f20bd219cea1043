@@ -1,0 +1,29 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Product product = new Product("AB1234", "First Product");
+		InventoryController inventory = new InventoryController();
+
+		addNewProduct(product, inventory);
+		addNewProduct(product, inventory);
+		
+		addStock(product, inventory, 10);
+		addStock(product, inventory, 15);
+		deductStock(product, inventory, 5);
+	}
+
+	private static void deductStock(Product product, InventoryController inventory, int qtyOut) {
+		inventory.deductstock(product, qtyOut);
+	}
+
+	private static void addStock(Product product, InventoryController inventory, Integer qtyIn) {
+		inventory.addstock(product, qtyIn);
+	}
+
+	private static void addNewProduct(Product product, InventoryController inventory) {
+		inventory.addProduct(product);
+	}
+
+}
