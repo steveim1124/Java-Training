@@ -47,6 +47,7 @@ public class InventoryController {
 						+ "' stock decreased by " + qtyOut);
 				System.out.println("Product '" + product.getCode() + "' of description '" + product.getDescription()
 				+ "' stock decreased by " + qtyOut);
+				System.out.println("stock qty = " + productStock.get(product));
 			} else {
 				System.out.println(
 						"Insufficient stock of product " + product.getCode() + ". Current stock is " + currentStock);
@@ -71,11 +72,11 @@ public class InventoryController {
 		System.out.println("Stock qty for product " + product.getCode() + " is " + productStock.get(product));
 	}
 
-	public void showProductHistory(String code) {
-		if (!productHistory.isEmpty()) {
-	for (int i = 0; i < productHistory.size(); i++ ) {
-		if (productHistory.get(i).contains(code)) {
-			System.out.println(productHistory.get(i));
+	public void showProductHistory(Product product) {
+		if (!productStock.isEmpty()) {
+	for (Entry<Product, Integer> product : productStock.entrySet()) {
+		if (product.getKey().getCode().equals(code)) {
+			
 		}
 	}
 }

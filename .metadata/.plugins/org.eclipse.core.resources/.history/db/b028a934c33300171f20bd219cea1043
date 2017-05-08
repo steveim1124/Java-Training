@@ -47,6 +47,7 @@ public class InventoryController {
 						+ "' stock decreased by " + qtyOut);
 				System.out.println("Product '" + product.getCode() + "' of description '" + product.getDescription()
 				+ "' stock decreased by " + qtyOut);
+//				System.out.println("stock qty = " + productStock.get(product));
 			} else {
 				System.out.println(
 						"Insufficient stock of product " + product.getCode() + ". Current stock is " + currentStock);

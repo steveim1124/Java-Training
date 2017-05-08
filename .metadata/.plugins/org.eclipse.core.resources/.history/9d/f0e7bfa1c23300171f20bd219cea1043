@@ -15,7 +15,7 @@ public class Main {
 		
 		showStockQty(product, inventoryController);
 		
-		showProductHistory(product, inventoryController);
+//		showProductHistory(product, inventoryController);
 	}
 
 	private static void showProductHistory(Product product, InventoryController inventoryController ) {

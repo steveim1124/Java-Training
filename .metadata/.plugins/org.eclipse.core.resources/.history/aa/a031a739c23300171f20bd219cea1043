@@ -15,11 +15,12 @@ public class Main {
 		
 		showStockQty(product, inventoryController);
 		
-		showProductHistory(product, inventoryController);
+//		showProductHistory(product, inventoryController);
 	}
 
 	private static void showProductHistory(Product product, InventoryController inventoryController ) {
-		inventoryController.showProductHistory(product.getCode());
+		inventoryController.showProductHistory(product);
+		// ***********  still to do  *************
 	}
 
 	private static void showStockQty(Product product, InventoryController inventoryController) {
