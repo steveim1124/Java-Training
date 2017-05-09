@@ -17,14 +17,13 @@ public class Main {
 		
 		showProductHistory(product, inventoryController);
 		
-		Product product2 = new Product("XY9876", "Last Product");
+		Product product2 = new Product("XY9876", "First Product");
 
 		addNewProduct(product2, inventoryController);
 		
-		addStock(product2, inventoryController, 100);
-		addStock(product2, inventoryController, 150);
-		deductStock(product2, inventoryController, 500);
-		deductStock(product2, inventoryController, 50);
+		addStock(product2, inventoryController, 10);
+		addStock(product2, inventoryController, 15);
+		deductStock(product2, inventoryController, 5);
 		
 		showStockQty(product2, inventoryController);
 		

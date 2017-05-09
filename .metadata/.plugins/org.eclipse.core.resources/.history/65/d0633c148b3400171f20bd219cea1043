@@ -6,20 +6,21 @@ import java.util.Map.Entry;
 
 public class InventoryController {
 
-	private static final String HAS_BEEN_ADDED_LABEL = "' has been added.";
-	private static final String STOCK_DECREASED_LABEL = "' stock decreased by ";
-	private static final String STOCK_INCREASED_LABEL = "' stock increased by ";
-	private static final String DESCRIPTION_LABEL = "' of description '";
-	private static final String PRODUCT_LABEL = "Product '";
-
+	private static final String STOCK_DECREASED_LABLE = "' stock decreased by ";
+	private static final String STOCK_INCREASED_LABLE = "' stock increased by ";
+	private static final String DESCRIPTION_LABLE = "' of description '";
+	private static final String PRODUCT_LABLE = "Product '";
+	
 	Map<Product, Integer> productStock = new HashMap<>();
 	List<String> productHistory = new ArrayList<>();
 
 	public void addProduct(Product product) {
 		if (!checkIfProductExists(product.getCode())) {
 			productStock.put(product, 0);
-			logProductHistory(product, 0, HAS_BEEN_ADDED_LABEL);
-			displayToScreen(product, 0, HAS_BEEN_ADDED_LABEL);
+			productHistory.add(PRODUCT_LABLE + product.getCode() + DESCRIPTION_LABLE + product.getDescription()
+			+ "' has been added.");
+			System.out.println(PRODUCT_LABLE + product.getCode() + DESCRIPTION_LABLE + product.getDescription()
+					+ "' has been added.");
 		} else
 			System.out.println("Cannot add product code " + product.getCode() + " as it already exists");
 	}
@@ -27,22 +28,22 @@ public class InventoryController {
 	public void addstock(Product product, Integer qtyIn) {
 		if (checkIfProductExists(product.getCode())) {
 			productStock.replace(product, productStock.get(product) + qtyIn);
-			logProductHistory(product, qtyIn, STOCK_INCREASED_LABEL);
-			displayToScreen(product, qtyIn, STOCK_INCREASED_LABEL);
+			logProductHistory(product, qtyIn,STOCK_INCREASED_LABLE);
+			displayToScreen(product, qtyIn, STOCK_INCREASED_LABLE);
 
 		} else
 			System.out.println("Product " + product.getCode() + " does not exist");
 	}
 
 	private void displayToScreen(Product product, Integer qtyIn, String mode) {
-		System.out.println(
-				PRODUCT_LABEL + product.getCode() + DESCRIPTION_LABEL + product.getDescription() + mode + qtyIn);
+		System.out.println(PRODUCT_LABLE + product.getCode() + DESCRIPTION_LABLE + product.getDescription()
+		+ mode + qtyIn);
 		System.out.println("Product stock = " + productStock.get(product));
 	}
 
 	private void logProductHistory(Product product, Integer qtyIn, String mode) {
-		productHistory
-				.add(PRODUCT_LABEL + product.getCode() + DESCRIPTION_LABEL + product.getDescription() + mode + qtyIn);
+		productHistory.add(PRODUCT_LABLE + product.getCode() + DESCRIPTION_LABLE + product.getDescription()
+				+ mode + qtyIn);
 	}
 
 	public void deductstock(Product product, Integer qtyOut) {
@@ -50,8 +51,8 @@ public class InventoryController {
 			int currentStock = productStock.get(product);
 			if (currentStock >= qtyOut) {
 				productStock.replace(product, currentStock - qtyOut);
-				logProductHistory(product, qtyOut, STOCK_DECREASED_LABEL);
-				displayToScreen(product, qtyOut, STOCK_DECREASED_LABEL);
+				logProductHistory(product, qtyOut, STOCK_DECREASED_LABLE);
+				displayToScreen(product, qtyOut, STOCK_DECREASED_LABLE);
 			} else {
 				System.out.println(
 						"Insufficient stock of product " + product.getCode() + ". Current stock is " + currentStock);
@@ -66,8 +67,6 @@ public class InventoryController {
 			for (Entry<Product, Integer> product : productStock.entrySet()) {
 				if (product.getKey().getCode().equals(code)) {
 					productExists = true;
-					if (productExists)
-						break;
 				}
 			}
 		}
@@ -81,12 +80,12 @@ public class InventoryController {
 	public void showProductHistory(String code) {
 		if (!productHistory.isEmpty()) {
 			System.out.println("***** Product History For " + code + " ********");
-			for (int i = 0; i < productHistory.size(); i++) {
-				if (productHistory.get(i).contains(code)) {
-					System.out.println(productHistory.get(i));
-				}
-			}
+	for (int i = 0; i < productHistory.size(); i++ ) {
+		if (productHistory.get(i).contains(code)) {
+			System.out.println(productHistory.get(i));
 		}
+	}
+}
 
 	}
 

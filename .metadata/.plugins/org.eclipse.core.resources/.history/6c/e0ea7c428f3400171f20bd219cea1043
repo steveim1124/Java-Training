@@ -17,7 +17,7 @@ public class Main {
 		
 		showProductHistory(product, inventoryController);
 		
-		Product product2 = new Product("XY9876", "Last Product");
+		Product product2 = new Product("XY9876", "First Product");
 
 		addNewProduct(product2, inventoryController);
 		

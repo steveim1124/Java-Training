@@ -2,9 +2,9 @@
 public class Main {
 
 	public static void main(String[] args) {
-		InventoryController inventoryController = new InventoryController();
 
 		Product product = new Product("AB1234", "First Product");
+		InventoryController inventoryController = new InventoryController();
 
 		addNewProduct(product, inventoryController);
 		addNewProduct(product, inventoryController);
@@ -16,19 +16,6 @@ public class Main {
 		showStockQty(product, inventoryController);
 		
 		showProductHistory(product, inventoryController);
-		
-		Product product2 = new Product("XY9876", "Last Product");
-
-		addNewProduct(product2, inventoryController);
-		
-		addStock(product2, inventoryController, 100);
-		addStock(product2, inventoryController, 150);
-		deductStock(product2, inventoryController, 500);
-		deductStock(product2, inventoryController, 50);
-		
-		showStockQty(product2, inventoryController);
-		
-		showProductHistory(product2, inventoryController);
 	}
 
 	private static void showProductHistory(Product product, InventoryController inventoryController ) {
@@ -36,7 +23,7 @@ public class Main {
 	}
 
 	private static void showStockQty(Product product, InventoryController inventoryController) {
-		inventoryController.showStockQty(product);
+		inventoryController.showStockQty(product, inventoryController);
 		
 	}
 

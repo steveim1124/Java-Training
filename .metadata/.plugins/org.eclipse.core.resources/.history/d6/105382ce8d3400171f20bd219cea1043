@@ -66,8 +66,6 @@ public class InventoryController {
 			for (Entry<Product, Integer> product : productStock.entrySet()) {
 				if (product.getKey().getCode().equals(code)) {
 					productExists = true;
-					if (productExists)
-						break;
 				}
 			}
 		}
